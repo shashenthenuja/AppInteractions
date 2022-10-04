@@ -84,6 +84,7 @@ public class CaptureFull extends AppCompatActivity {
         }
     }
 
+    // Used Glide library v4.13.2 (3rd party) to load the image and gray scale
     private void setImageGray() {
         Glide.with(this)
                 .load(photoFile)
