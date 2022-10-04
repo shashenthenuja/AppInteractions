@@ -41,6 +41,8 @@ public class MainActivity extends AppCompatActivity {
                 Editable num = number.getText();
                 if (!num.toString().isEmpty()) {
                     callButtonClicked(Integer.valueOf(num.toString()));
+                }else {
+                    number.setError("Enter Phone Number");
                 }
             }
         });
@@ -52,6 +54,15 @@ public class MainActivity extends AppCompatActivity {
                 Editable longi = longitude.getText();
                 if (!checkEmpty(lat.toString(), longi.toString())) {
                     viewMapButtonClicked(Double.parseDouble(lat.toString()), Double.parseDouble(longi.toString()));
+                }else {
+                    if (lat.toString().isEmpty() && longi.toString().isEmpty()) {
+                        latitude.setError("Enter Latitude");
+                        longitude.setError("Enter Longitude");
+                    }else if (lat.toString().isEmpty()) {
+                        latitude.setError("Enter Latitude");
+                    }else {
+                        longitude.setError("Enter Longitude");
+                    }
                 }
             }
         });
